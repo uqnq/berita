@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Berita — Halaman Utama</title>
+  <meta name="description" content="Berita harian — liputan umum, pemerintahan, ekonomi, budaya, dan informasi penting untuk warga." />
+  <style>
+    :root{
+      --gov-blue:#0b3d91;
+      --gov-accent:#f1c40f;
+      --muted:#6b7280;
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f1724;line-height:1.45}
+    header{background:linear-gradient(180deg,var(--gov-blue),#0a2e6b);color:white;padding:18px 16px}
+    .container{max-width:1100px;margin:0 auto;padding:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .seal{width:56px;height:56px;border-radius:999px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .seal span{font-size:18px;color:var(--gov-accent)}
+    .title{font-size:20px;font-weight:700}
+    nav{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
+    nav a{color:rgba(255,255,255,0.92);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
+    nav a:hover{background:rgba(255,255,255,0.06)}
+
+    /* Hero */
+    .hero{background:var(--card);margin-top:16px;padding:16px;border-radius:12px;display:flex;gap:16px;align-items:center}
+    .hero .left{flex:1}
+    .hero h1{margin:0;font-size:20px;color:var(--gov-blue)}
+    .hero p{margin:8px 0;color:var(--muted)}
+    .cta{display:inline-block;background:var(--gov-blue);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700}
+
+    /* layout */
+    .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
+    @media(min-width:900px){.grid{grid-template-columns:2fr 1fr}}
+
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 2px 6px rgba(9,18,28,0.04)}
+    .news-list{display:flex;flex-direction:column;gap:12px}
+    .news-item{display:flex;gap:12px;align-items:flex-start}
+    .thumb{width:88px;height:64px;background:#e6eefb;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--gov-blue);font-weight:700}
+    .meta{font-size:12px;color:var(--muted)}
+    .headline{font-weight:700;margin:4px 0}
+    .sidebar .small{font-size:14px;color:var(--muted)}
+
+    footer{margin-top:18px;padding:18px 0;color:var(--muted);text-align:center}
+
+    /* Mobile friendly adjustments */
+    .mobile-only{display:block}
+    @media(min-width:900px){.mobile-only{display:none}}
+
+    /* Utility */
+    .muted{color:var(--muted)}
+    .kicker{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--gov-blue);font-weight:800}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <div class="seal" aria-hidden="true"><span>RI</span></div>
+        <div>
+          <div class="title">Berita</div>
+          <div class="muted">Informasi Harian — Pemerintahan | Ekonomi | Budaya</div>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#">Beranda</a>
+        <a href="#">Nasional</a>
+        <a href="#">Daerah</a>
+        <a href="#">Ekonomi</a>
+        <a href="#">Budaya</a>
+        <a href="#">Opini</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="left">
+        <div class="kicker">Terkini</div>
+        <h1>Berita harian, terang, dan dapat dipercaya untuk semua warga.</h1>
+        <p>Berita menyajikan liputan terpercaya dari pusat pemerintahan hingga aktivitas daerah. Fokus kami: akurasi, konteks, dan pelayanan informasi publik yang jelas.</p>
+        <a class="cta" href="#latest">Lihat Berita Terbaru</a>
+      </div>
+      <div class="right mobile-only">
+        <div class="muted">Akses cepat: ringkas untuk layar kecil. Tampilan ramah ponsel dengan prioritas headline dan ringkasan singkat.</div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2 class="kicker">Berita Utama</h2>
+        <div id="latest" class="news-list">
+          <article class="news-item">
+            <div class="thumb">1</div>
+            <div>
+              <div class="meta">Nasional — 2 jam lalu</div>
+              <div class="headline">Judul berita utama hari ini, ringkasan singkat menampilkan inti peristiwa dalam dua kalimat.</div>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <div class="thumb">2</div>
+            <div>
+              <div class="meta">Ekonomi — 4 jam lalu</div>
+              <div class="headline">Perkembangan ekonomi terbaru yang berdampak pada masyarakat dan pelaku usaha.</div>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <div class="thumb">3</div>
+            <div>
+              <div class="meta">Daerah — 6 jam lalu</div>
+              <div class="headline">Liputan kegiatan pemerintah daerah yang perlu diketahui publik.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <aside class="card sidebar">
+        <h3 class="kicker">Sorotan</h3>
+        <p class="small">• Agenda publik hari ini · Pengumuman resmi · Laporan cuaca dan lalu lintas.</p>
+
+        <h3 class="kicker" style="margin-top:12px">Langganan</h3>
+        <p class="small">Daftar newsletter harian kami untuk mendapatkan ringkasan berita penting langsung ke email Anda.</p>
+      </aside>
+    </div>
+
+    <section class="card" style="margin-top:16px">
+      <h2 class="kicker">Tentang Berita</h2>
+      <p>
+        Berita adalah portal informasi harian yang dirancang untuk memenuhi kebutuhan warga yang ingin mengikuti perkembangan pemerintahan, kebijakan publik, kondisi ekonomi, serta dinamika sosial dan budaya di Indonesia. Kami percaya bahwa informasi yang berkualitas akan memperkuat partisipasi publik dan mendorong tata kelola yang lebih baik. Oleh karena itu, redaksi bekerja berdasarkan prinsip akurasi, keberimbangan, dan keterbukaan: setiap laporan berusaha menghadirkan fakta, sumber yang dapat dipercaya, dan konteks yang memudahkan pembaca memahami dampak pada kehidupan sehari-hari. Selain menyajikan berita utama dan laporan khusus, kami juga menyediakan rangkuman kebijakan pemerintah, wawancara dengan pelaku pemerintahan dan pakar, serta fitur analitik yang membantu pembaca menilai implikasi jangka panjang dari sebuah kebijakan.
+      </p>
+      <p>
+        Halaman ini dirancang mobile-friendly agar warga dapat membaca berita kapan saja dan di mana saja—dengan tata letak yang responsif, teks yang mudah dibaca pada layar kecil, serta tombol panggil tindakan untuk berbagi atau menyimpan artikel. Di sisi lain, kami menempatkan standar editorial tinggi untuk memastikan setiap informasi yang dipublikasikan telah melalui proses verifikasi. Jika Anda adalah perwakilan institusi publik atau warga yang memiliki informasi penting untuk dibagikan, terdapat kanal khusus untuk menyampaikan rilis pers atau pengumuman resmi. Misi kami adalah menjadi jembatan antara pemerintahan dan masyarakat, membantu mempercepat aliran informasi yang benar dan berguna.
+      </p>
+      <p>
+        Dengan memadukan bahasa yang jelas, tampilan formal berciri pemerintahan, dan pengalaman pengguna yang sederhana namun modern, Berita hadir untuk meningkatkan literasi informasi publik. Terima kasih telah mengunjungi—pantau terus halaman ini untuk pembaruan setiap hari, dan gunakan kanal kami untuk berkontribusi pada diskusi publik yang sehat dan bertanggung jawab.
+      </p>
+    </section>
+
+    <footer>
+      <div class="muted">© 2025 Berita — Layanan Informasi Publik. Kontak: redaksi@berita.example</div>
+    </footer>
+  </main>
+</body>
+</html>
